@@ -2,7 +2,6 @@ $(document).ready(function() {
     var player1_counter = 1
     var player2_counter = 1
     var track_length = 40
-
   $(document).on('keyup', function(event) {
 
     var code = event.keyCode;
@@ -19,7 +18,7 @@ $(document).ready(function() {
       if ($('#player1_strip td.active').hasClass('winner')) {
         $(document).off('keyup');
         $('.p1_winner').css('display', 'inline');
-        $('.replay_button').css('display', 'block');
+        $('.results_button').css('display', 'block');
       }
     }
 
@@ -30,7 +29,7 @@ $(document).ready(function() {
       if ($('#player2_strip td.active').hasClass('winner')) {
         $(document).off('keyup');
         $('.p2_winner').css('display', 'inline');
-        $('.replay_button').css('display', 'block');
+        $('.results_button').css('display', 'block');
       }
     }
 
