@@ -1,7 +1,19 @@
 $(document).ready(function() {
-    var player1_counter = 1
-    var player2_counter = 1
-    var track_length = 40
+    var player1_counter = 1;
+    var player2_counter = 1;
+    var track_length = 40;
+
+    function get_muthafuckin_winna(data) {
+      $.ajax ({
+        type: 'POST',
+        data: { sql: data },
+        url: '/results'
+      })
+      .done(function() {
+        // window.location = '/results';
+      });
+    }
+
   $(document).on('keyup', function(event) {
 
     var code = event.keyCode;
@@ -14,10 +26,12 @@ $(document).ready(function() {
     if(code == 81) {
       update_player_position('player1');
       player1_counter += 1;
-      console.log("P1: " + player1_counter);
+      // console.log("P1: " + player1_counter);
       if ($('#player1_strip td.active').hasClass('winner')) {
         $(document).off('keyup');
         $('.p1_winner').css('display', 'inline');
+        var winner = $('.p1_winner').text();
+        get_muthafuckin_winna(winner);
         $('.results_button').css('display', 'block');
       }
     }
@@ -29,6 +43,8 @@ $(document).ready(function() {
       if ($('#player2_strip td.active').hasClass('winner')) {
         $(document).off('keyup');
         $('.p2_winner').css('display', 'inline');
+        var winner = $('.p2_winner').text();
+        get_muthafuckin_winna(winner);
         $('.results_button').css('display', 'block');
       }
     }

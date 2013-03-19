@@ -1,10 +1,10 @@
 class CreateGames < ActiveRecord::Migration
   def change
     create_table :games do |t|
-      t.string :player1_id
-      t.string :player2_id
-      t.float  :time
-      t.string :winner_id
+      t.integer :player1_id
+      t.integer :player2_id
+      t.float   :time
+      t.integer :winner_id
 
       t.timestamps
     end

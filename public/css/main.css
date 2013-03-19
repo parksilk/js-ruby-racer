@@ -39,9 +39,13 @@ h2.win_announcement {
   margin: 0;
 }
 
-input.replay_button {
+input.replay_button, {
   text-align: center;
   padding: 16px;
   margin: 32px auto;
   display: none;
+}
+
+.results_link {
+  
 }

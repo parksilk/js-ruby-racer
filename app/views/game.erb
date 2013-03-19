@@ -1,7 +1,7 @@
 
   <table class="racer_table">
     <tr id="player1_strip">
-      <td class="player_label">Player One</td>
+      <td class="player_label"><%= @player1.name %></td>
       <td class="active"></td>
       <td></td>
       <td></td>
@@ -44,7 +44,7 @@
       <td class="winner"></td>
     </tr>
     <tr id="player2_strip">
-      <td class="player_label">Player Two</td>
+      <td class="player_label"><%= @player2.name %></td>
       <td class="active"></td>
       <td></td>
       <td></td>
@@ -87,6 +87,7 @@
       <td class="winner"></td>
     </tr>
   </table>
-  <h2 class="win_announcement"><span class='p1_winner'>Player One Wins!</span><span class='p2_winner'>Player Two Wins!</span></h2>
-  <input class="results_button" type="button" value="Play Again" onClick="/results">
+  <h2 class="win_announcement"><span class='p1_winner'><%= @player1.id %></span><span class='p2_winner'><%= @player2.id %></span></h2>
+  <p><%= @game.id %></p>
+  <p class="results_link"><a href="/results/<%= @game.id %>">Get Results!</a>
 
