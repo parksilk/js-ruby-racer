@@ -6,7 +6,30 @@
 header h1 {
   text-align: center;
   font-style: italic;
+  font-size: 64px;
+  font-weight: bold;
 }
+
+header h1 a {
+  text-decoration: none;
+  color: #f4b300;
+  text-shadow: -8px 0 0 #db5f00, -16px 0 0 #c15300, -24px 0 0 #a54500, -32px 0 0 #8c3a00;
+}
+
+.player_names {
+  width: 320px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+input[type=text] {
+  margin: 8px;
+  padding: 8px;
+}
+
+input[type=submit] {
+  padding: 8px;
+  }
 
 .racer_table {
   width: 100%;
@@ -33,10 +56,11 @@ header h1 {
 }
 
 h2.win_announcement {
-  color: red;
+  color: #2f7be0;
   font-size: 125px;
   text-align: center;
   margin: 0;
+  text-shadow: 0 8px 16px rgba(0,0,0,.62);
 }
 
 input.replay_button, {
@@ -46,6 +70,6 @@ input.replay_button, {
   display: none;
 }
 
-.results_link {
-  
+h3.game_number {
+  text-align: center;
 }
