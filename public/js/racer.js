@@ -3,7 +3,7 @@ $(document).ready(function() {
     var player2_counter = 1;
     var track_length = 40;
 
-    function get_muthafuckin_winna(data) {
+    function get_winner(data) {
       $.ajax ({
         type: 'POST',
         data: { sql: data },
@@ -26,12 +26,11 @@ $(document).ready(function() {
     if(code == 81) {
       update_player_position('player1');
       player1_counter += 1;
-      // console.log("P1: " + player1_counter);
       if ($('#player1_strip td.active').hasClass('winner')) {
         $(document).off('keyup');
         $('.p1_winner').css('display', 'inline');
         var winner = $('.p1_winner').text();
-        get_muthafuckin_winna(winner);
+        get_winner(winner);
         $('.results_button').css('display', 'block');
       }
     }
@@ -39,12 +38,11 @@ $(document).ready(function() {
     if(code == 80) {
       update_player_position('player2');
       player2_counter += 1;
-      console.log("P2: " + player2_counter);
       if ($('#player2_strip td.active').hasClass('winner')) {
         $(document).off('keyup');
         $('.p2_winner').css('display', 'inline');
         var winner = $('.p2_winner').text();
-        get_muthafuckin_winna(winner);
+        get_winner(winner);
         $('.results_button').css('display', 'block');
       }
     }
