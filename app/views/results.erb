@@ -2,8 +2,11 @@
 <!-- rematch button, or play with new players -->
 <!-- option to save the url of the game -->
 
-  <p>This is game <%= @game.id %>!</p>
+  <h3 class="game_number">Results for game #<%= @game.id %>!</h3>
 
-  <h2 class="win_announcement"><%= @winner.name %> wins!</h2>
+  <h2 class="win_announcement"><%= @winner.name %> won!</h2>
 
-  <input class="replay_button" type="button" value="Play Again" onClick="document.location.reload(true)">
+  <ul>
+    <li><a href="#">Rematch</a></li>
+    <li><a href="/">New Players</a></li>
+  </ul>
